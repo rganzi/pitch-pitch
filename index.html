@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pitch - Pitch</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Pitch - Pitch">
+  <meta name="author" content="">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Pitch - Pitch</h1>
+    <h2>A Shiny PitchFX Visualization</h2>
+    <p><br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The Real MLB Strike Zone</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Question: does the real Major League Baseball STRIKE ZONE, as called by umpires, conform to the MLB Rulebook&#39;s definition?</p>
+
+<ul>
+<li>If not, what are the true shape and dimensions of the strike zone?</li>
+</ul></li>
+<li><p>Major League Baseball Rulebook, Rule 2.00, The STRIKE ZONE<br>
+<a href="http://mlb.mlb.com/mlb/official_info/umpires/rules_interest.jsp">http://mlb.mlb.com/mlb/official_info/umpires/rules_interest.jsp</a>:</p>
+
+<ul>
+<li>&quot;The STRIKE ZONE is that area over home plate the upper limit of which is a horizontal line at the midpoint between the top of the shoulders and the top of the uniform pants, and the lower level is a line at the hollow beneath the kneecap. The Strike Zone shall be determined from the batter&#39;s stance as the batter is prepared to swing at a pitched ball.&quot;</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>The Shiny App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Shiny app has two main parts (switched via the radio button):</p>
+
+<ol>
+<li><p>Plots of pitch densities -- the actual location of pitches thrown -- and colored by whether those pitches were typically called a ball or strike.</p></li>
+<li><p>Plots of a General Additive Model which show the probability that a pitch thrown in a certain location will be called a strike.</p></li>
+</ol>
+
+<ul>
+<li><p>The data are from the publicly-available PitchFX database.</p></li>
+<li><p>Options</p>
+
+<ul>
+<li>The drop down menu allows the user to analyze any of a selection of MLB pitchers.</li>
+<li>You can toggle the rulebook-defined strike zone.</li>
+<li>You can adjust the bounds of the x- and y-axes.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Pitch Density Plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><p>The dotted black line represents the MLB Rulebook definition of the strike zone.</p></li>
+<li><p>The orange contour lines represent increasing densities of called strikes. </p></li>
+<li><p>The &quot;dodger blue&quot; contour lines indicate increasing densities of balls. </p></li>
+<li><p>Each densitiy is emphasized by the background coloring of the plot.</p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/density.plot.png" alt="plot of chunk density.plot"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>GAM Model Plot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><p>Again, the dotted black line represents the MLB Rulebook definition of the strike zone.</p></li>
+<li><p>Each color band represents a different probability that a pitch in a specific location will be called a strike.</p></li>
+<li><p>The boundary between the green and blue bands forms the shape of the modeled strike zone. At this boundary, there is a 50/50 chance of the pitch being called a strike or ball.</p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/model.plot.png" alt="plot of chunk model.plot"> </p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The Real MLB Strike Zone'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The Shiny App'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Pitch Density Plot'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='GAM Model Plot'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
